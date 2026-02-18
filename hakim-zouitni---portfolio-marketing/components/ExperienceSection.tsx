@@ -46,20 +46,26 @@ const ExperienceSection: React.FC = () => {
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-center">
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Impact Clé</h4>
                   <div className="space-y-6">
-                    {exp.metrics.map((m, i) => (
-                      <div key={i}>
-                        <div className="flex justify-between items-end mb-1">
-                          <span className="text-sm font-semibold text-slate-500">{m.label}</span>
-                          <span className="text-xl font-black text-blue-600">{m.value}</span>
+                    {exp.metrics.map((m, i) => {
+                      // Extract percentage from value string (e.g., "95%", "+15%", "40%")
+                      const percentMatch = m.value.match(/(\d+)%/);
+                      const percentage = percentMatch ? parseInt(percentMatch[1], 10) : 50;
+                      
+                      return (
+                        <div key={i}>
+                          <div className="flex justify-between items-end mb-1">
+                            <span className="text-sm font-semibold text-slate-500">{m.label}</span>
+                            <span className="text-xl font-black text-blue-600">{m.value}</span>
+                          </div>
+                          <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                            <div 
+                              className="bg-blue-600 h-full rounded-full transition-all duration-1000" 
+                              style={{ width: `${percentage}%` }}
+                            ></div>
+                          </div>
                         </div>
-                        <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                          <div 
-                            className="bg-blue-600 h-full rounded-full transition-all duration-1000" 
-                            style={{ width: `${60 + i * 15}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}

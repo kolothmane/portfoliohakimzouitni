@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
             Hakim <span className="text-gradient">Zouitni</span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-lg leading-relaxed">
-            Chargé d'Études Marketing Junior passionné par la donnée et l'optimisation stratégique. 
+            Marketeur passionné par la donnée et l'optimisation stratégique. 
             Basé en Île-de-France, j'accompagne les entreprises dans la compréhension de leurs marchés.
           </p>
           <div className="flex flex-wrap gap-4">
