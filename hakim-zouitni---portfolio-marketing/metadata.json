@@ -1,0 +1,8 @@
+
+{
+  "name": "Hakim Zouitni - Portfolio Marketing",
+  "description": "Portfolio professionnel de Hakim Zouitni, Chargé d'Études Marketing Junior, mettant en avant ses expériences chez NielsenIQ, Peugeot et AkzoNobel.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
